@@ -1,0 +1,664 @@
+{
+  "schema": 2,
+  "coreVersion": "2026.09.23-2",
+  "releasedAt": "2026-09-22T18:00:49.868Z",
+  "repo": "Juenia/WayGameCore",
+  "branch": "main",
+  "rawBase": "https://raw.githubusercontent.com/Juenia/WayGameCore/main/",
+  "notes": [
+    "热更新：修掉「更新完永远显示还差 1 个更新」—— update.exe 原来被无条件写成 update.exe.new，而 update.exe 一直不存在",
+    "热更新：本次更新动了编辑器自己的文件时，更完自动重启编辑器生效（核心一并拉回来）",
+    "热更新：占用判定补上 AccessDenied —— File.Move 覆盖被占用文件抛的是 UnauthorizedAccessException",
+    "编辑器：原生 SQLite 2.1.10 → 2.1.12，修掉 CVE-2025-6965（高危：SQLite < 3.50.2 聚合项数超列数会内存破坏）",
+    "任务系统：接取/查看显示全量要求与完成方式",
+    "任务系统：collect/explore/talk 三类目标补上推进链路，完成有回执",
+    "帮助菜单改版：分类总览 + 二级下钻 + 精美图片卡",
+    "热更新改为独立 update.exe（不依赖编辑器）：支持回退、只留两版备份、可更新编辑器自身"
+  ],
+  "fileCount": 123,
+  "totalBytes": 21878567,
+  "sections": [
+    {
+      "name": "core",
+      "dir": "",
+      "target": "",
+      "fileCount": 87,
+      "totalBytes": 1912180,
+      "files": [
+        {
+          "path": "core/databaseModule.js",
+          "sha256": "3e549dae7d91d09176bb982550ba29e7840dbcaa37485a1267ba2faf736616b9",
+          "size": 74825
+        },
+        {
+          "path": "core/GameSystem.js",
+          "sha256": "af33b893769163d01a482be75944c5bdca4e6bcf2ebe08f39d5fd4e4c12c99ca",
+          "size": 145795
+        },
+        {
+          "path": "core/templateDataSource.js",
+          "sha256": "a07023bc57b22a09be11db6cde6630a98a9433ddf33458544ba311b2bb44ccf6",
+          "size": 3650
+        },
+        {
+          "path": "modules/backpackModule.js",
+          "sha256": "f7614f81fe96da4a67439930dbf1365d1c37e34f48cfa93a44d4492042ee2720",
+          "size": 17860
+        },
+        {
+          "path": "modules/combatModule.js",
+          "sha256": "1bd47edd781fbf57cc20e7095b83f3286448b909b8f2e6896e1c37d4905fe237",
+          "size": 43332
+        },
+        {
+          "path": "modules/customCommandModule.js",
+          "sha256": "e55517ad1ffd48ca1693d60af48d3adc1f48770cd583f963fd2df5c8e405cc80",
+          "size": 25457
+        },
+        {
+          "path": "modules/defaultData.js",
+          "sha256": "264fa74246f5c1749e39061f5faa0d9b833e977b31f81904cad86281d6a3549d",
+          "size": 35565
+        },
+        {
+          "path": "modules/equipmentModule.js",
+          "sha256": "d75b97c7bf8d7a6c8675e95a7265dd1deb21fcc1fe760f84b451706fd094e2a9",
+          "size": 40658
+        },
+        {
+          "path": "modules/equipmentSetModule.js",
+          "sha256": "517fcad25beaac64c89b0425bb861771d4fbc352a19c2fe02b66dd1f849a6ede",
+          "size": 14940
+        },
+        {
+          "path": "modules/eventModule.js",
+          "sha256": "0468450eba313a7548889522bca12d462651540732dd562d80cd7a79ca622ad3",
+          "size": 86215
+        },
+        {
+          "path": "modules/imageModule.js",
+          "sha256": "97939e312adc6905d0490acb76f19fe596f59e32af4215b1c0fbf4aadca4da09",
+          "size": 45296
+        },
+        {
+          "path": "modules/itemModule.js",
+          "sha256": "e70a6ecd6a077fd3b5deb0503f3d190ff3ec6ad0d6809350261913e1ef9dc154",
+          "size": 26257
+        },
+        {
+          "path": "modules/lib/blocks/action.js",
+          "sha256": "5cf043f92a131b35ac5e1ca269eb941d747194a51a7c0e8c7fc68313d834c901",
+          "size": 4891
+        },
+        {
+          "path": "modules/lib/blocks/data.js",
+          "sha256": "17205728cd6c277765e62522cd3b037de11d9ac3b9f95e04343e4e04f02b9775",
+          "size": 13565
+        },
+        {
+          "path": "modules/lib/blocks/flow.js",
+          "sha256": "96fc6261ea5542b3ac51df588196a45719d4c773a4e9240efd7e7ad6a778456a",
+          "size": 6272
+        },
+        {
+          "path": "modules/lib/blocks/flowx.js",
+          "sha256": "b40c473cc392f479c839c585dddf4a66b6926633fbe1e74abcc7c5274034ef35",
+          "size": 2765
+        },
+        {
+          "path": "modules/lib/blocks/list.js",
+          "sha256": "af6d841f80c19ba212e9aa04a44ed0328e92e3e63a704227633d043855845d00",
+          "size": 5202
+        },
+        {
+          "path": "modules/lib/blocks/num.js",
+          "sha256": "9daa3837b83ecb1678a389f62d2afcd22c7858e74eb75459e1235c3004b19893",
+          "size": 4339
+        },
+        {
+          "path": "modules/lib/blocks/output.js",
+          "sha256": "dbf6643c399d49090e9857f6fc35fd27811aa8a8d5a92fc418b46900e66ac2ee",
+          "size": 3663
+        },
+        {
+          "path": "modules/lib/blocks/player.js",
+          "sha256": "470d2525be2041f5bca7a8bc6fb78cd3eb16410dbf5e4278bfd627fa33b3a8c8",
+          "size": 5194
+        },
+        {
+          "path": "modules/lib/blocks/query.js",
+          "sha256": "d92b5a8f89c1f68ad69aa716ea2b93cf7a5113fef3cb03e8c18e159afa3eada8",
+          "size": 2456
+        },
+        {
+          "path": "modules/lib/blocks/text.js",
+          "sha256": "c5e688f9eb1287ba0d0872c944e4f00261071513145f1ee60da1718bc8c33bba",
+          "size": 4572
+        },
+        {
+          "path": "modules/lib/image/imageDoc.js",
+          "sha256": "cb0c3b48cb297bcb8cb57dc9e762a857aa0921ab72cd9b33bc0e345bdd4a8f42",
+          "size": 18424
+        },
+        {
+          "path": "modules/lib/image/imageHtml.js",
+          "sha256": "12ec86e6ccecdd36cd2f8a9bd77545582b08bcbaf969a1ccbdb0abc56c8b9f43",
+          "size": 18158
+        },
+        {
+          "path": "modules/lib/image/imageRender.js",
+          "sha256": "5ab07586d497d19a36a4b29e5e805d91b51ea9521ad68c73250c5f8eb9ff2ff9",
+          "size": 11897
+        },
+        {
+          "path": "modules/lib/image/imageSchema.js",
+          "sha256": "669127e4e31682a172b1ecce7e516ae33d552fb35ede736413dfe876b2d78f12",
+          "size": 4618
+        },
+        {
+          "path": "modules/lib/image/imageStore.js",
+          "sha256": "a81aa1b6c09ef8d021fdda9084251aa921b61232c1fee8f6e0dd7ae78b4c789f",
+          "size": 27445
+        },
+        {
+          "path": "modules/lib/image/msgLayouts.js",
+          "sha256": "72891cd184b536b5ff7b34945fa50747341e39eefea0d65199617e0a0905e413",
+          "size": 20228
+        },
+        {
+          "path": "modules/lib/image/renderWorker.js",
+          "sha256": "5586f79e6142dcba4cbc6f115dd9b69175a58c8f9f2424ab1c9f8f90a6f6b85c",
+          "size": 13798
+        },
+        {
+          "path": "modules/lib/image/seedLayouts.js",
+          "sha256": "f45a3206085dc1d000bbf5c0ac1e7c031ad5c3fc72f059f281b23792283af79b",
+          "size": 35982
+        },
+        {
+          "path": "modules/lib/superBlockKit.js",
+          "sha256": "f144f78bc20a2e7c5c57d28f9e49d30539d78e9a60109ee27838092eb4293f89",
+          "size": 8378
+        },
+        {
+          "path": "modules/lib/superBlocks.js",
+          "sha256": "e32fb992cfb0394d3a6b32fea6b0603c4e77faf43dd2f58d176898c669711730",
+          "size": 2545
+        },
+        {
+          "path": "modules/lib/superBlockUtil.js",
+          "sha256": "03f8c4490a7ab74cefde60681f5da23ca58c2be86e6863795b866b8b1a53afdf",
+          "size": 8276
+        },
+        {
+          "path": "modules/lib/superChannel.js",
+          "sha256": "ecde382cec81c4c42b2635b4c7c99842720194db6fdfaf553ab795ba64c2b7b0",
+          "size": 7971
+        },
+        {
+          "path": "modules/lib/superCode.js",
+          "sha256": "33a26793b663f635de8551c190475210f35c718ed61cf88e2fe9f8751907fcdd",
+          "size": 57505
+        },
+        {
+          "path": "modules/lib/superConst.js",
+          "sha256": "74212796cd2b4b9a08be2f709fb72d6a07f373ba2a7bde2f13b1aa5963481792",
+          "size": 2039
+        },
+        {
+          "path": "modules/lib/superDefs.js",
+          "sha256": "3ed39801dd60ca7fc04b646821a1eb4f6fc1262eff6914a4c35be67f8e1431e2",
+          "size": 4575
+        },
+        {
+          "path": "modules/lib/superDifferences.js",
+          "sha256": "33931d65c2b4f235edd80b103d0388928ca04239b9f9772936793c4475e0d0c9",
+          "size": 4743
+        },
+        {
+          "path": "modules/lib/superErrors.js",
+          "sha256": "b77b63dcbbed1cd900002c31d25d4a4dca1d71abc8f017763a0ab11524bfc0a8",
+          "size": 6556
+        },
+        {
+          "path": "modules/lib/superEvents.js",
+          "sha256": "c9555b0c3990d9446af63181275a19f74366971350ac47e742ab735376109ad3",
+          "size": 1447
+        },
+        {
+          "path": "modules/lib/superExpr.js",
+          "sha256": "74d34d3a0bc6c0bb6e34c361d99a7ad16d03e5587d06f6398e9f8609eacf9980",
+          "size": 26954
+        },
+        {
+          "path": "modules/lib/superExprKit.js",
+          "sha256": "ea5fb55ea2daa91af2950d1c6019941d1154961b1479ba6e08be71935cb8491e",
+          "size": 3045
+        },
+        {
+          "path": "modules/lib/superGraph.js",
+          "sha256": "d80fcb7867991a772080be4c72efc88e17654dcaad3b85e4d877da6858c83408",
+          "size": 1206
+        },
+        {
+          "path": "modules/lib/superGuard.js",
+          "sha256": "8931ba7d68c2984f5c8e768b030057532656393dc1d126d316e4558f79bd07e6",
+          "size": 2611
+        },
+        {
+          "path": "modules/lib/superHost.js",
+          "sha256": "5809fb258e2816d1c01d8cfdac18a95b03e57a4caedc275f528e752055a1df11",
+          "size": 2819
+        },
+        {
+          "path": "modules/lib/superInvoke.js",
+          "sha256": "d8461cd8397b38b5d572941b1d4803602a18e024d7d2c93762d3f56e67232dd9",
+          "size": 10304
+        },
+        {
+          "path": "modules/lib/superJs.js",
+          "sha256": "7fd06bc2d018a73bd692623465a505635e6d02cbf9a6df7e9d67417c77d2e547",
+          "size": 15255
+        },
+        {
+          "path": "modules/lib/superOps.js",
+          "sha256": "70ce662a19c1ea81603bb5bb8e2dc162f5ebbc5232aaf37a41459dc41849fc3e",
+          "size": 12861
+        },
+        {
+          "path": "modules/lib/superParse.js",
+          "sha256": "78b29b349c720d6f47c80b5443a694f2d42934ae72d6f1e7631d86eaec3dcff6",
+          "size": 9843
+        },
+        {
+          "path": "modules/lib/superRespond.js",
+          "sha256": "d676f14c0b95a6947161b645010f2081fb28a37ec118d8de59d9c95b7c2b6572",
+          "size": 9148
+        },
+        {
+          "path": "modules/lib/superSchedule.js",
+          "sha256": "6c28a8f97955d112f005893558af29ec6a7519d092647794655b9c8a8dfd74d8",
+          "size": 11744
+        },
+        {
+          "path": "modules/lib/superSchema.js",
+          "sha256": "f1e016bd2cf4f967b8bdce23db4cd7a119909aa21e9269fe6f903ad79ee7d248",
+          "size": 5078
+        },
+        {
+          "path": "modules/lib/superState.js",
+          "sha256": "c43fe8dc983f7ca28c5c414dc765e1e79f4bb2eca2b96c42a1bca2a57f171582",
+          "size": 7519
+        },
+        {
+          "path": "modules/lib/superStatements.js",
+          "sha256": "6d1f02754b7f051d3533e8758be66ac52ef0b528bb5ffc4d4e001f66514ecf1e",
+          "size": 8788
+        },
+        {
+          "path": "modules/lib/superStore.js",
+          "sha256": "d983ccb8fa672eda3b3f7491f0b7754e7b5ee5f43ed315a26807eef7864576bb",
+          "size": 2921
+        },
+        {
+          "path": "modules/lib/superTables.js",
+          "sha256": "e2e783cd06922f0b2ee8e5da6d792fa6852011af1137072c10939cc2563dfb30",
+          "size": 1740
+        },
+        {
+          "path": "modules/lib/superTriggers.js",
+          "sha256": "b003f4b2259924449f021c0aaf4f09bb9eebb47963aaf540f8bdee9e5250c10b",
+          "size": 19924
+        },
+        {
+          "path": "modules/lib/superVm.js",
+          "sha256": "c63f6831ceed4c69000e77a51f4c485bcd94b5109544943e22d95cfa182e1817",
+          "size": 4746
+        },
+        {
+          "path": "modules/lib/templateKeys.js",
+          "sha256": "a15e2b23bf29a646349793f9d9d8482aff6bf5356262e7ae338de7467dda7724",
+          "size": 2199
+        },
+        {
+          "path": "modules/lib/wayLang.js",
+          "sha256": "aeace99a1c1e1b291d596198c807b8eed8884d6321e8f0ca954c97dd6c2874c7",
+          "size": 46288
+        },
+        {
+          "path": "modules/mapModule.js",
+          "sha256": "58b4765c7d33886bd08bba9d9dc14edb29f64e65e32938ec0acad863aaaa12f5",
+          "size": 15495
+        },
+        {
+          "path": "modules/npcModule.js",
+          "sha256": "a21cf204566439e309c7f9bfaaee18dea379b4fd42c05b6ee8d5f988fbfa377e",
+          "size": 13889
+        },
+        {
+          "path": "modules/playerModule.js",
+          "sha256": "fba43efd46e835af0272b85248c0c6ba6f57628e6cfbde6433d9d1816761c8ee",
+          "size": 15668
+        },
+        {
+          "path": "modules/professionModule.js",
+          "sha256": "4b4bda0b85d8780bb8dbb9750ebad1f0a06bb4f3dfded63e3861430c91b7aed9",
+          "size": 30786
+        },
+        {
+          "path": "modules/questModule.js",
+          "sha256": "1d0193f7eabca295d2a8641a29c2632a10a2c3d50e6e775a0c8b7fd84d0d2a6f",
+          "size": 42522
+        },
+        {
+          "path": "modules/shopModule.js",
+          "sha256": "4036f085f6af6180bc1b022c2455a825bed9dd80339ed268d3587a66d98fc633",
+          "size": 15427
+        },
+        {
+          "path": "modules/signInModule.js",
+          "sha256": "e0217e20d3f481562ca03d3c391856dd153802b21acddb646777a4cf60108172",
+          "size": 8934
+        },
+        {
+          "path": "modules/skillModule.js",
+          "sha256": "43983b09548728acc23b2350f16d384aff43a260f25cf0d8bbc4e534394f2ed7",
+          "size": 25523
+        },
+        {
+          "path": "modules/superModule.js",
+          "sha256": "295b6e02d5aadf908e3459f8d6919f9893c54a4e96ff89411d8a7e90d33e1dea",
+          "size": 25195
+        },
+        {
+          "path": "modules/templateModeModule.js",
+          "sha256": "06577d7256e32a30787e3d25644073542a67ce1d90df0d1918b9efd38183fa44",
+          "size": 19466
+        },
+        {
+          "path": "modules/world/_manifest.json",
+          "sha256": "4c7ee587a81c5c2e1e14f56ebe3090c31e4fa21fb4576d50010ef627388dad78",
+          "size": 471
+        },
+        {
+          "path": "modules/world/equipment_sets.json",
+          "sha256": "434b16c676df5086c48d2f74a6874c3566dd20be12de5abbe6e65998face7d25",
+          "size": 5870
+        },
+        {
+          "path": "modules/world/equipment_slots.json",
+          "sha256": "06d587971c0441f63ff73eb1e21d935a27851de94e00d0d8607d69594bfa3867",
+          "size": 430
+        },
+        {
+          "path": "modules/world/equipment.json",
+          "sha256": "ebf5557a8139985f8fd7f1d9405a9ed10ca28e6096325eecf782659c9f601765",
+          "size": 80706
+        },
+        {
+          "path": "modules/world/items.json",
+          "sha256": "9cd7259767e4e1130de123d587e53c6918191b150b40e66d93140324b0ec21fe",
+          "size": 55851
+        },
+        {
+          "path": "modules/world/load.js",
+          "sha256": "0840480797b93b1dce2f9a9fc81a3a267e4f6b10a6f6c70156fe527fde0aa5d9",
+          "size": 1206
+        },
+        {
+          "path": "modules/world/maps.json",
+          "sha256": "f876d95c9c91f429f91ffab5568ee0b50e2073a5879e88c70860a3c0a33a4f5d",
+          "size": 27813
+        },
+        {
+          "path": "modules/world/monsters.json",
+          "sha256": "22a405ad129a410ee30cc37978133cce5d8d40752a651560e7e6558242036a7e",
+          "size": 160201
+        },
+        {
+          "path": "modules/world/npcs.json",
+          "sha256": "c2aa30e08b83005ef6778071c1ad58e49a8beb8778f7d4d4a17acfe04362e4f7",
+          "size": 15924
+        },
+        {
+          "path": "modules/world/professions.json",
+          "sha256": "7f5e1916f9920797e13f5eb3d27313301f78f51a5679679f9e6c131e4d80e49e",
+          "size": 62761
+        },
+        {
+          "path": "modules/world/quests.json",
+          "sha256": "79480680692c65b992410648fb7a6d7a85fa09561e9b3c13d6d094a9240cfb0b",
+          "size": 51320
+        },
+        {
+          "path": "modules/world/README.md",
+          "sha256": "36ebde498966308388ee857491aaa45ef95dd3d9315e78478dbcd2161fa0ec0a",
+          "size": 4670
+        },
+        {
+          "path": "modules/world/shops.json",
+          "sha256": "8b8d2ee2af7d4a3608dac9f4b881598740cc23e6ac71a2d75f9d838024384006",
+          "size": 14689
+        },
+        {
+          "path": "modules/world/skills.json",
+          "sha256": "66f0046ba2c5f6ca8a43f4fba03af33030d1a8ec7069572ecee4eb1e14f4d66f",
+          "size": 16893
+        },
+        {
+          "path": "package-lock.json",
+          "sha256": "faf6b4f50fe43e01fb6fdd18a16f24c81382153a97cd202ad316b1ad7a97d185",
+          "size": 76043
+        },
+        {
+          "path": "package.json",
+          "sha256": "f2fdcaa72311b4142ee788fd935db8ffcd4f6f7e199b9af6832f931393310d34",
+          "size": 524
+        },
+        {
+          "path": "server.js",
+          "sha256": "873c8c66001a40c560739d4a3b58aee69f456186aac9bf2fcc8607ec61714188",
+          "size": 51556
+        }
+      ]
+    },
+    {
+      "name": "editor",
+      "dir": "editor-dist",
+      "target": "编辑器",
+      "fileCount": 32,
+      "totalBytes": 19736115,
+      "files": [
+        {
+          "path": "ControlzEx.dll",
+          "sha256": "3eceee9042e90da4a433007729778f72516f762599f7920839c751e180a47cb0",
+          "size": 251456
+        },
+        {
+          "path": "de/MahApps.Metro.resources.dll",
+          "sha256": "1e925cc4fb9deb450e7c6414bdc59d4e2afbec39a0607b8ac8f9795f2e4a312a",
+          "size": 10752
+        },
+        {
+          "path": "ICSharpCode.AvalonEdit.dll",
+          "sha256": "d41138d2e17998e77aeba0a5dcdedaaa08c2601aa72db6a6b7b9b56910372515",
+          "size": 622080
+        },
+        {
+          "path": "MahApps.Metro.dll",
+          "sha256": "68768ebd9b04ebe7d9f093414c94a4f550741b7f3cf6ec3089b62c0fa76ee308",
+          "size": 3572584
+        },
+        {
+          "path": "MdXaml.dll",
+          "sha256": "f4e17fb362edfb4f6b3ebcaa0f7b582dba3f3c97bbae461e3c060d944bb57efc",
+          "size": 153088
+        },
+        {
+          "path": "MdXaml.Plugins.dll",
+          "sha256": "84fc480bedbf9c7acba1959264d099e4bb6617203a82a6eb1a13e80c70326d50",
+          "size": 12800
+        },
+        {
+          "path": "Microsoft.Data.Sqlite.dll",
+          "sha256": "86831b3786d98d7629c80faeaacf3bdc8caab18f18b2eb2905aade667127578c",
+          "size": 174632
+        },
+        {
+          "path": "Microsoft.Web.WebView2.Core.dll",
+          "sha256": "88a3b62f45225a811cdb85df6dfd95c2bff9a0e43e3b04f813b125eaca56cc9f",
+          "size": 603712
+        },
+        {
+          "path": "Microsoft.Web.WebView2.WinForms.dll",
+          "sha256": "b3a0e4513a9920bead16b5488586211f858ca9091298446e45e4dc8998891208",
+          "size": 38992
+        },
+        {
+          "path": "Microsoft.Web.WebView2.Wpf.dll",
+          "sha256": "9367fe5dd7a8a1362544dd22cbf665215aed30abae6da780d5567b01e2d941a3",
+          "size": 83536
+        },
+        {
+          "path": "Microsoft.Xaml.Behaviors.dll",
+          "sha256": "71e00e2b9ca3088132fc4d54a2076cb07127fe02a5fbc10df8d61cde55dfdbef",
+          "size": 145280
+        },
+        {
+          "path": "monaco/vs/base/browser/ui/codicons/codicon/codicon.ttf",
+          "sha256": "b3ffc1af5867d6c901ea05f38ee12f8f8369db4912a91d56156ee9c85bd47dc3",
+          "size": 77400
+        },
+        {
+          "path": "monaco/vs/base/common/worker/simpleWorker.nls.js",
+          "sha256": "a7b212e2cd848787a8af48fc99c5ce82dee49a8534de42ff4833024e93ca4d19",
+          "size": 832
+        },
+        {
+          "path": "monaco/vs/base/common/worker/simpleWorker.nls.zh-cn.js",
+          "sha256": "cece19ca9db35eb58973a81ec27fc9866759920c2ba789ada2887a94400f4de5",
+          "size": 1003
+        },
+        {
+          "path": "monaco/vs/base/worker/workerMain.js",
+          "sha256": "d3acd18994f2571c2511314d049689d1b2d649ba667ee1f7291eb0750c08494f",
+          "size": 339604
+        },
+        {
+          "path": "monaco/vs/basic-languages/javascript/javascript.js",
+          "sha256": "e7276c9e1382aebb07c75f6f62d52f7df17ddb06eced55cbf2b6f0be6b22b113",
+          "size": 7177
+        },
+        {
+          "path": "monaco/vs/editor/editor.main.css",
+          "sha256": "764a3dde806a7414402e87ce4bf2da4f5bb6f36910d887d5c8ee985c1bdf92bd",
+          "size": 115427
+        },
+        {
+          "path": "monaco/vs/editor/editor.main.js",
+          "sha256": "a79692b8eabd24e0662310c8505d91ab8b85f17db997e4b8f8838980b25bf6df",
+          "size": 3469378
+        },
+        {
+          "path": "monaco/vs/editor/editor.main.nls.js",
+          "sha256": "76882f9f1ca076a810cc44891fc00e6c3922d51d8c2d41c5093b016eeaa401cd",
+          "size": 96161
+        },
+        {
+          "path": "monaco/vs/editor/editor.main.nls.zh-cn.js",
+          "sha256": "43f6b0598c4492d89246f357d3dca7cc8bfa6a5e100588c9566bc6f5c8e144df",
+          "size": 156056
+        },
+        {
+          "path": "monaco/vs/language/typescript/tsWorker.js",
+          "sha256": "ca6e2bdb4f8dd9a39e2b9ea3336ab98b3b46df5803053ba658db3e862ceb18b0",
+          "size": 4602226
+        },
+        {
+          "path": "monaco/vs/loader.js",
+          "sha256": "effab18afbb4297a23d9d98be95672e4088c735a0677993c329cf29b48914aed",
+          "size": 30051
+        },
+        {
+          "path": "runtimes/win-x64/native/e_sqlite3.dll",
+          "sha256": "b7385d722c83fb52142a00477a726723745916d22a555711ee89834c1111fb2e",
+          "size": 1978880
+        },
+        {
+          "path": "runtimes/win-x64/native/WebView2Loader.dll",
+          "sha256": "462b36fd1be6ca9f7563466a89e57c41ef4a4def3e0a84fa885d203aea4a3aaf",
+          "size": 165968
+        },
+        {
+          "path": "SQLitePCLRaw.batteries_v2.dll",
+          "sha256": "815ce410c9eab531dd219318e3ba16c5e38e83d361cfbbdbb4bbca222c497b0b",
+          "size": 5120
+        },
+        {
+          "path": "SQLitePCLRaw.core.dll",
+          "sha256": "af340ac9eb9195795660d7fc1114f486b6ab63998f33176e2f24c8e0acb9aa84",
+          "size": 51200
+        },
+        {
+          "path": "SQLitePCLRaw.provider.e_sqlite3.dll",
+          "sha256": "eb6696e55882c3000333146b1cd4970439601e11fdedae941105ca921f615bd6",
+          "size": 36864
+        },
+        {
+          "path": "WayGameEditor.deps.json",
+          "sha256": "96f1cc2f53c4a94039674b086ca31a3191dc2a9e87f432a00c8b9d4ce36d8185",
+          "size": 14937
+        },
+        {
+          "path": "WayGameEditor.dll",
+          "sha256": "5506c9b949fa930d33acbbcfebd8cbd2e131c48de98cc313ade18c7f04a5c761",
+          "size": 2704384
+        },
+        {
+          "path": "WayGameEditor.exe",
+          "sha256": "615b25935af3e6de4d9047c92eaf890d0d387654dc56557ba70f33b8dd0128f7",
+          "size": 171008
+        },
+        {
+          "path": "WayGameEditor.runtimeconfig.json",
+          "sha256": "96bc2946dff8790400d652ec7f8de7bb043e954980d59470c112788b68a1fbd3",
+          "size": 519
+        },
+        {
+          "path": "WpfAnimatedGif.dll",
+          "sha256": "091c944f2db95521f9190319173f17848d515da8f5a2374a0ab680406ba65914",
+          "size": 43008
+        }
+      ]
+    },
+    {
+      "name": "updater",
+      "dir": "update-dist",
+      "target": "",
+      "fileCount": 4,
+      "totalBytes": 230272,
+      "files": [
+        {
+          "path": "update.deps.json",
+          "sha256": "c572209541512dae2c464505c4e3c0d735c1a521a7fe43b0f837c1770dce1c51",
+          "size": 412
+        },
+        {
+          "path": "update.dll",
+          "sha256": "4e4f3c770e45534249caf1dd856cb7b12e5a83c14f2062958684c53e645b1fa2",
+          "size": 67072
+        },
+        {
+          "path": "update.exe",
+          "sha256": "1409ae18a3f2050aebd040b52f5a88e5fc805f4d20aa664f21f065ec4f6868e1",
+          "size": 162304
+        },
+        {
+          "path": "update.runtimeconfig.json",
+          "sha256": "08ff90aca8cf6d69bde162335acee0a7de8bbf8a5ec47c1c1347be9d6e03aefb",
+          "size": 484
+        }
+      ]
+    }
+  ]
+}

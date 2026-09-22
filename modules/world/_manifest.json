@@ -1,0 +1,18 @@
+{
+  "note": "本目录由 tools/gen-world-defaults.js 从当前正式世界（data/game.db）导出，是内容种子的唯一真源。",
+  "regeneratedBy": "node tools/gen-world-defaults.js",
+  "sourceDatabase": "data/game.db",
+  "counts": {
+    "items": 239,
+    "equipment": 323,
+    "equipment_sets": 12,
+    "equipment_slots": 7,
+    "maps": 120,
+    "monsters": 226,
+    "skills": 74,
+    "professions": 22,
+    "quests": 126,
+    "shops": 30,
+    "npcs": 70
+  }
+}

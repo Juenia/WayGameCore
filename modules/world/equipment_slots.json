@@ -1,0 +1,9 @@
+[
+{"id":"accessory","name":"饰品","description":"饰品部位"},
+{"id":"body","name":"身体","description":"护甲部位"},
+{"id":"feet","name":"足部","description":"鞋子部位"},
+{"id":"head","name":"头部","description":"头盔部位"},
+{"id":"legs","name":"腿部","description":"护腿部位"},
+{"id":"ring","name":"戒指","description":"戒指部位"},
+{"id":"weapon","name":"手持","description":"武器部位"}
+]
